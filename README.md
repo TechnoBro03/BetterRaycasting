@@ -1,4 +1,4 @@
-# BetterRaycasting
+# Better Raycasting
 A Minecraft datapack for better, customizable ray casting.
 
 ## Features
