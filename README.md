@@ -1,5 +1,5 @@
 # BetterRaycasting
-A Minecraft datapack for better ray casting.
+A Minecraft datapack for better, customizable ray casting.
 
 ## Features
 * More efficient than traditional methods.
