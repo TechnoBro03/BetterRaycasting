@@ -6,7 +6,7 @@ A Minecraft datapack for better ray casting.
 * Highly customizable.
 * Multiplayer friendly
 * Detects entities and blocks
-* 4 methods (start, block, entity, end).
+* 4 customizable methods (start, block, entity, end).
 
 ## Benchmarking Performance at 500 steps:
 * Other Method (Using marker and TP): 15ms Average, 23ms Max
