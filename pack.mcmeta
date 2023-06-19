@@ -1,6 +1,6 @@
 {
     "pack" : {
         "pack_format" : 15,
-        "description" : "A Minecraft datapack for better ray casting"
+        "description" : "A Minecraft datapack for better, customizable ray casting"
     }
 }
