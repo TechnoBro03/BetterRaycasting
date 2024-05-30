@@ -3,6 +3,7 @@ A Minecraft datapack for more efficient, easy, and customizable ray casting.
 
 ## Features
 * More efficient than traditional methods.
+* Can be run every tick with a low performance impact.
 * Multiplayer friendly.
 * Very accurate block AND entity detection.
 * 5 customizable methods. ```at_start, at_end, at_block, at_entity, at_step``` Customize them [here](https://github.com/TechnoBro03/BetterRaycasting/tree/main/data/raycasting/functions/custom).
