@@ -1,5 +1,5 @@
 {
     "values": [
-    "raycasting:tick"
+    "raycasting:internal/tick"
  ]
 }

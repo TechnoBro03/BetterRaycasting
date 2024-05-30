@@ -1,17 +1,18 @@
-# Shows ray
-execute if score .showRay rayStep matches 1 run particle electric_spark ~ ~ ~ 0 0 0 0 1 force
+# Run at_step
+function raycasting:custom/at_step
 
-# Detect hits
-execute if score @s rayStep matches 1 run tag @s add hitEnd
-execute positioned ~ ~-1 ~ at @e[distance=..1,type=!player] run tag @s add hitEntity
-execute unless block ~ ~ ~ #raycasting:ray_transparent run tag @s add hitBlock
+# Decrease step
+scoreboard players remove @s raycasting.step 1
 
-# Run appropriate hit function
-execute as @s[tag=hitEntity] run function raycasting:hit/hit_entity
-execute as @s[tag=hitBlock] run function raycasting:hit/hit_block
-execute as @s[tag=hitEnd] run function raycasting:hit/hit_end
+# Detect reaching the end of ray (max step was reached)
+execute if score @s raycasting.step matches 0 run function raycasting:custom/at_end
 
-scoreboard players remove @s rayStep 1
+# Detect if ray hits a block
+execute unless block ~ ~ ~ #raycasting:ray_transparent run function raycasting:custom/at_block
 
+# Detect if ray hits entity
+execute as @e[dx=0,tag=!raycasting.cast] positioned ~-0.99 ~-0.99 ~-0.99 if entity @s[dx=0,tag=!raycasting.cast] run function raycasting:custom/at_entity
+
+# Recursive loop
 # Default: Step Distance = 0.5 (100 maxSteps * 0.5 stepDistant = 50 blocks)
-execute as @s[tag=!stopRay,tag=!hitEnd] positioned ^ ^ ^0.5 run function raycasting:internal/step
+execute if score @s raycasting.step matches 1.. as @s[tag=!raycasting.stop] positioned ^ ^ ^0.5 run function raycasting:internal/step

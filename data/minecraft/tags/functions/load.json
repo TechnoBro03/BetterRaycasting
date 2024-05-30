@@ -1,5 +1,5 @@
 {
     "values": [
-    "raycasting:load"
+    "raycasting:internal/load"
 ]
 }
